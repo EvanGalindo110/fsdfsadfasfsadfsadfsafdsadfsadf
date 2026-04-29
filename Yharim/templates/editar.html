@@ -1,0 +1,31 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}Editar datos{% endblock %}
+
+{% block contenido %}
+
+<h4 class="text-center">Editar información</h4>
+
+{% if error %}
+<p class="text-center text-danger">{{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    <div class="row mb-2">
+        <div class="col">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{ datos.nombre }}" required>
+        </div>
+        <div class="col">
+            <input type="text" name="apellidos" class="form-control" placeholder="Apellidos" value="{{ datos.apellidos }}" required>
+        </div>
+    </div>
+
+    <input type="email" name="correo" class="form-control mb-2" placeholder="Correo electrónico" value="{{ datos.correo }}" required>
+
+    <div class="d-grid gap-2 mt-3">
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        <a href="/listas" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+{% endblock %}

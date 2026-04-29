@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Crear cuenta{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card shadow mx-auto" style="max-width: 400px;">
+            <div class="card-body">
+
+                {% block contenido %}
+<h3 class="text-center">Crea una cuenta</h3>
+<p class="text-center">Es rápido y fácil.</p>
+
+<form method="POST" action="/inicio">
+
+    <div class="row">
+        <div class="col mb-2">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+        </div>
+        <div class="col mb-2">
+            <input type="text" name="apellidos" class="form-control" placeholder="Apellidos" required>
+        </div>
+    </div>
+
+    <input type="email" name="correo" class="form-control mb-2"
+        placeholder="Correo electrónico" required>
+
+    <input type="password" name="password" class="form-control mb-2"
+        placeholder="Contraseña nueva" required>
+
+    <div class="d-grid mt-3">
+        <button type="submit" class="btn btn-success">Registrarte</button>
+    </div>
+
+    <p class="text-center mt-3">
+        <a href="/sesion">Iniciar sesión</a>
+    </p>
+
+</form>
+    {% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

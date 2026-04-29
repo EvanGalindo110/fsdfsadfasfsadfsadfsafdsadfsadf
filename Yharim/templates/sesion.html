@@ -1,0 +1,32 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}Iniciar sesión{% endblock %}
+
+{% block contenido %}
+
+<h3 class="text-center">Inicia sesión</h3>
+<p class="text-center">Es rápido y fácil.</p>
+
+{% if error %}
+<div class="alert alert-danger text-center">{{ error }}</div>
+{% endif %}
+
+<form method="POST" action="/sesion">
+
+    <input type="email" name="correo" class="form-control mb-2"
+        placeholder="Correo" required>
+
+    <input type="password" name="contraseña" class="form-control mb-2"
+        placeholder="Contraseña" required>
+
+    <div class="d-grid mt-3">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </div>
+
+</form>
+
+<p class="text-center mt-3">
+    <a href="/">Crear cuenta</a>
+</p>
+
+{% endblock %}
